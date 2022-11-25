@@ -13,7 +13,7 @@ connectDB();
 app.use(express.json());
 const path = require("path");
 const rootPath = path.resolve();
-app.use(express.static("./public"));
+// app.use(express.static("./public"));
 app.set("view engine", "ejs");
 app.set("views", `${rootPath}/backend/views`);
 app.use("/api/user", userRouter);
