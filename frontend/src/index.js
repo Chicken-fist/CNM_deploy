@@ -10,11 +10,11 @@ import { BrowserRouter, HashRouter } from "react-router-dom";
 ReactDOM.render(
   
   <ChakraProvider>
-    <HashRouter>
+    <BrowserRouter>
     <ChatProvider>
         <App />
     </ChatProvider> 
-    </HashRouter>
+    </BrowserRouter>
   </ChakraProvider>,
   document.getElementById("root")
 );

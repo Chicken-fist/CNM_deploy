@@ -33,7 +33,7 @@ import { ChatState } from "../Context/ChatProvider";
 import BoxInfoIamge from "./miscellaneous/BoxInforImage";
 import InputComponent from "./ChatComponent/InputComponent";
 
-const ENDPOINT = "http://172.16.10.54:5000"; // socket den
+// const ENDPOINT = "http://172.16.10.54:5000"; // socket den
 var selectedChatCompare;
 //////SOCKET//////
 
