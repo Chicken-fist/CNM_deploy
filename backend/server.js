@@ -24,9 +24,17 @@ app.use("/api/friend", friendRouter);
 //eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNjU0NzIxMjcwMTZmMGE0OWYwM2YzNiIsImlhdCI6MTY2NzU4MTgxOCwiZXhwIjoxNjcwMTczODE4fQ.mlMzFsTLQvFu7Bq6gWQ7mJbLBozSEIXZBY8ZMjTWOGw
 app.use(notFound);
 app.use(errorHandler);
-const server = app.listen(PORT, () => {
+
+const server = app.listen(PORT || 5000, () => {
   console.log(`http://localhost:${PORT}`);
 });
+
+const __dirname = path.resolve();
+app.use(express.static(path.join(__dirname, '/frontend/build')));
+app.get('*', (req, res) =>
+  res.sendFile(path.join(__dirname, '/frontend/build/index.html'))
+);
+
 /// Socket /////
 const io = require("socket.io")(server, {
   // waiting time server ko connect
