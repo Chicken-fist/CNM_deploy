@@ -8,6 +8,7 @@ import ChatProvider from "./Context/ChatProvider";
 import { BrowserRouter } from "react-router-dom";
 
 ReactDOM.render(
+  
   <ChakraProvider>
     <BrowserRouter>
     <ChatProvider>
