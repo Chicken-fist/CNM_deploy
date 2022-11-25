@@ -14,6 +14,7 @@ function App() {
         <Route path="/provider" component={ChatProvider} />
         <Route path="/chats" component={Chatpage} />
         <Route path="/friend" component={Friendpage} />
+        
       </div>
     </ChatProvider>
   );
