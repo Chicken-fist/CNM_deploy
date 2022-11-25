@@ -6,42 +6,42 @@ const multerS3 = require("multer-s3");
 const multer = require("multer");
 // FILE
 
-const storage = multer.memoryStorage({
-  destination(req, file, callback) {
-    callback(null, "");
-  },
-});
-function checkFileType(file, cb) {
-  const fileTypes = /doc|docx|pdf/;
-  const extname = fileTypes.test(path.extname(file.originalname).toLowerCase());
-  const minetype = fileTypes.test(file.mimetype);
-  if (extname && minetype) {
-    return cb(null, true);
-  }
-  return cb("Error: Doc only");
-}
-// const upload = multer({
-//   storage,
-//   limits: { fileSize: 2000000 },
-//   fileFilter(req, file, cb) {
-//     checkFileType(file, cb);
+// const storage = multer.memoryStorage({
+//   destination(req, file, callback) {
+//     callback(null, "");
 //   },
 // });
+// function checkFileType(file, cb) {
+//   const fileTypes = /doc|docx|pdf/;
+//   const extname = fileTypes.test(path.extname(file.originalname).toLowerCase());
+//   const minetype = fileTypes.test(file.mimetype);
+//   if (extname && minetype) {
+//     return cb(null, true);
+//   }
+//   return cb("Error: Doc only");
+// }
+// // const upload = multer({
+// //   storage,
+// //   limits: { fileSize: 2000000 },
+// //   fileFilter(req, file, cb) {
+// //     checkFileType(file, cb);
+// //   },
+// // });
 
-const { v4: uuid } = require("uuid");
-const AWS = require("aws-sdk");
-AWS.config.update({
-  region: process.env.region,
-  accessKeyId: process.env.accessKeyID,
-  secretAccessKey: process.env.secretAccessKey,
-});
-const docClient = new AWS.DynamoDB.DocumentClient();
-const tableName = "Paper";
-const s3 = new AWS.S3({
-  accessKeyId: process.env.accessKeyID,
-  secretAccessKey: process.env.secretAccessKey,
-});
-const CLOUD_FRONT_URL = "http://d3bcs23y1o2maa.cloudfront.net/";
+// const { v4: uuid } = require("uuid");
+// const AWS = require("aws-sdk");
+// AWS.config.update({
+//   region: process.env.region,
+//   accessKeyId: process.env.accessKeyID,
+//   secretAccessKey: process.env.secretAccessKey,
+// });
+// const docClient = new AWS.DynamoDB.DocumentClient();
+// const tableName = "Paper";
+// const s3 = new AWS.S3({
+//   accessKeyId: process.env.accessKeyID,
+//   secretAccessKey: process.env.secretAccessKey,
+// });
+// const CLOUD_FRONT_URL = "http://d3bcs23y1o2maa.cloudfront.net/";
 // FILE - END
 const sendMessage = asyncHandler(async (req, res, next) => {
   const { content, chatId, pic, file } = req.body;
