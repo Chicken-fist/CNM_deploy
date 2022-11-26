@@ -277,7 +277,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain, socket, socketConnected }) => {
   useEffect(() => {
     if (user == null) {
       setuser(user1);
-      history.push("/");
+      history.go(0);
     }
     // tương tự như AJAX: fetchMessages -> thêm message vào
     fetchMessages();

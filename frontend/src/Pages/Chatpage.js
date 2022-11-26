@@ -13,7 +13,7 @@ import {
 import { getUserOther } from "../config/ChatLogics";
 // CallModal
 
-const ENDPOINT = "http://localhost:5000"; // socket den
+const ENDPOINT = "https://mern-chat-wztm.onrender.com"; // socket den
 var socket;
 const Chatpage = () => {
   // dùng trong ChatBox

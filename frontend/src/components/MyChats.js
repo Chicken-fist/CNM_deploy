@@ -38,7 +38,7 @@ const MyChats = ({ fetchAgain, socket }) => {
   useEffect(() => {
     setuser(loggedUser);
     if (loggedUser == null) {
-      history.push("/");
+      history.go(0);
     }
     fetchChats();
   }, [fetchAgain]);
