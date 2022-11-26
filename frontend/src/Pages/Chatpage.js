@@ -28,7 +28,7 @@ const Chatpage = () => {
 
   useEffect(() => {
     if (user == null) {
-      history.go(0);
+      history.push("/");
     }
   }, [history]);
 
@@ -37,7 +37,7 @@ const Chatpage = () => {
     socket.emit("setup", user);
     socket.on("connected", () => setSocketConnected(true)); // client nhận được rồi mơi save dô client
     
-    console.log("SINGLE CHAT:", socket);
+    // console.log("SINGLE CHAT:", socket);
   }, []);
 
   useEffect(() => {
