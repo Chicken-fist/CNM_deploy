@@ -305,9 +305,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain, socket, socketConnected }) => {
           selectedChat.latestMessage = newMessageRecieved;
         }
       });
-    } else {
-      setSelectedChat(chats[chats.length - 1]);
-    }
+    } 
   }, [messages]);
 
   const handleMakeFriend = () => {
