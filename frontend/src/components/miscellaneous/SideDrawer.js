@@ -220,7 +220,7 @@ function SideDrawer() {
       >
         <Tooltip label="Search Users to chat" hasArrow placement="bottom-end">
           <Button
-            _hover={{ background: "gray.400" }}
+            _hover={{ background: "#16A085" }}
             leftIcon={<Search2Icon color="white" />}
             variant="ghost"
             onClick={onOpen}
@@ -264,7 +264,7 @@ function SideDrawer() {
             variant="ghost"
             fontSize="35px"
             size="lg"
-            _hover={{ background: "gray.400" }}
+            _hover={{ background: "#16A085" }}
             icon={<TiGroup color="white" />}
           />
 
@@ -272,7 +272,7 @@ function SideDrawer() {
             variant="ghost"
             fontSize="35px"
             size="lg"
-            _hover={{ background: "gray.400" }}
+            _hover={{ background: "#16A085" }}
             icon={<MdOutlineLiveTv color="white" />}
           />
         </Box>

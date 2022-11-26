@@ -23,11 +23,11 @@ const ProfileModal = ({ user, children, statusFiend }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { selectedChat } = ChatState();
   const loggedUser = JSON.parse(localStorage.getItem("userInfo"));
-  
+
   const [loading, setLoading] = useState(false);
   const toast = useToast();
   const unfrinedFriend = async () => {
-    return;
+    // return;
     try {
       const config = {
         headers: {
@@ -42,30 +42,29 @@ const ProfileModal = ({ user, children, statusFiend }) => {
           friend: user._id,
         },
         config
-        );
-        onClose(true);
-      } catch (error) {
-        toast({
-          title: "Error Occured!",
-          description: "FRIEND",
-          status: "error",
-          duration: 5000,
-          isClosable: true,
-          position: "bottom",
-        });
-        setLoading(false);
+      );
+      onClose();
+    } catch (error) {
+      toast({
+        title: "Error Occured!",
+        description: "FRIEND",
+        status: "error",
+        duration: 5000,
+        isClosable: true,
+        position: "bottom",
+      });
+      setLoading(false);
+    }
+  };
+  const checkStatusFriend = () => {
+    console.log("TINH TRANG:", statusFiend);
+    if (statusFiend !== undefined) {
+      if (statusFiend[0].status == 2) {
+        return true;
       }
-    };
-    const checkStatusFriend = () => {
-      console.log("TINH TRANG:", statusFiend);
-      if(statusFiend !== undefined){
-        if(statusFiend[0].status == 2 ){
-
-          return true ;
-        }
-      }
-      return false;
-  }
+    }
+    return false;
+  };
 
   return (
     <>
