@@ -71,7 +71,7 @@ function SideDrawer() {
   const history = useHistory();
   useEffect(() => {
     if (user == null) {
-      history.go(0);
+      history.push("/");
     }
   }, [history]);
 
