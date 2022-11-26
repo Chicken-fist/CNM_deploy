@@ -21,10 +21,10 @@ const ChatProvider = ({ children }) => {
   useEffect(() => {
     if (user) {
       if(selectedFriend){
-        history.push("#/friend");
+        history.push("/friend");
       }
       else{
-        history.push("#/chats");
+        history.push("/chats");
       }
       
     } else {
