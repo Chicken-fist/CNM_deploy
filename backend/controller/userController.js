@@ -260,9 +260,9 @@ const register = asyncHandler(async (req, res) => {
                                                     <table border="0" cellpadding="0" cellspacing="0">
                                                         <tr>
                                                             <td align="center" bgcolor="#fff" style="border-radius: 6px;">
-                                                                <a href="http://${ip.address()}:5000/api/user/verify?email=${
-          user.email
-        }&token=${hashMail}" target="_blank"
+                                                                <a href="https://mern-chat-wztm.onrender.com/api/user/verify?email=${
+                                                                  user.email
+                                                                }&token=${hashMail}" target="_blank"
                                                                     style="
                                                                     font-weight: bold;width: 400px;
                                                                     display: inline-block; padding: 16px 36px; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 16px; color: #17A589; text-decoration: none; border-radius: 6px;">

@@ -58,9 +58,16 @@ const ProfileModal = ({ user, children, statusFiend }) => {
   };
   const checkStatusFriend = () => {
     console.log("TINH TRANG:", statusFiend);
+
     if (statusFiend !== undefined) {
-      if (statusFiend[0].status == 2) {
-        return true;
+      const check = statusFiend.length;
+      console.log("TINH TRANG:", check);
+        if (check > 0 ) {
+          // console.log("TINH TRANG:", check);
+          if(statusFiend[0].status == 2){
+            return true;
+          }
+        
       }
     }
     return false;
